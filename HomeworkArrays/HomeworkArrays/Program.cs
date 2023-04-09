@@ -4,36 +4,35 @@
     {
         private static void Main(string[] args)
         {
-            SignFind();
+            GetNumber();
           
         }
 
-        public static void SignFind()
+        public static void GetNumber()
         {
-            int number = GetNumber();
-
-            if (number < 0)
-                Console.WriteLine($" {number} is negative number ");
-            else
-                Console.WriteLine($" {number} is positive number ");
-        }
-
-        public static int GetNumber()
-        {
-            bool isnumber;
-
-            Console.Write(" Enter your number : ");
-            isnumber = int.TryParse(Console.ReadLine(), out int number);
+            Console.Write(" Enter your age : ");
+            bool isnumber = int.TryParse(Console.ReadLine(), out int number);
 
             while (!isnumber)
             {
-                Console.WriteLine(" An error occured in the system \n Please enter another number.");
-                Console.Write(" Enter your number : ");
+                Console.WriteLine(" An error occurred in the system !!! \n Please enter another number. ");
+                Console.Write(" Enter your age : ");
                 isnumber = int.TryParse(Console.ReadLine(), out number);
             }
 
-            return number;
+            Biography(number);
+
+
         }
+
+        public static void Biography(int age)
+        {
+
+            Console.WriteLine($" I'm {age} years old.");
+        }
+
+       
+
     }
 }
 
